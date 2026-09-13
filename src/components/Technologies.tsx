@@ -35,13 +35,13 @@ export default function Technologies() {
     const alreadyAdded = stack.some((item) => item.id === technology.id);
 
     if (alreadyAdded) {
-      toast.warning(`${technology.name} is already in your stack.`);
+      toast.warning(`${technology.name} is already in my stack.`);
       return;
     }
 
     setStack((previousStack) => [...previousStack, technology]);
 
-    toast.success(`${technology.name} added to your stack.`);
+    toast.success(`${technology.name} added to my stack.`);
   };
 
   // Remove from Stack
@@ -54,7 +54,7 @@ export default function Technologies() {
 
     setStack((previousStack) => previousStack.filter((item) => item.id !== id));
 
-    toast.info(`${technology.name} removed from your stack.`);
+    toast.info(`${technology.name} removed from my stack.`);
   };
 
   // Remove All
@@ -65,7 +65,7 @@ export default function Technologies() {
 
     setStack([]);
 
-    toast.info("All technologies removed from your stack.");
+    toast.info("All technologies removed from my stack.");
   };
 
   return (
@@ -81,7 +81,7 @@ export default function Technologies() {
           </h2>
 
           <p className="mt-2 text-sm text-gray-500 sm:text-base">
-            Pick one technology per category to build your ideal stack.
+            Pick one technology per category to build my ideal stack.
           </p>
         </div>
 
