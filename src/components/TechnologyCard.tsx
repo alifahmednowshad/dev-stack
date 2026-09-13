@@ -52,8 +52,9 @@ export default function TechnologyCard({
         </span>
       </div>
 
-      {/* Button */}
+      {/* Add Button */}
       <button
+        type="button"
         onClick={() => onAdd(technology)}
         disabled={isAdded}
         className={`mt-4 w-full rounded-md px-4 py-2 text-xs font-medium transition-all duration-300 ${
