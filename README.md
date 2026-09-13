@@ -120,7 +120,7 @@ has been selected:
 
 ``` tsx
 {stack.length === 0 ? (
-  <p>Your stack is empty.</p>
+  <p>My stack is empty.</p>
 ) : (
   <StackItems />
 )}
