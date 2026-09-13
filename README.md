@@ -8,9 +8,8 @@ technologies from their stack.
 
 ## ✨ Features
 
--   🔎 **Explore Technologies** --- Browse frontend, backend, database,
-    programming language, styling, DevOps, and tool technologies.
--   🧩 **Build Your Own Stack** --- Add technologies to a personal
+-   🔎 **Explore Technologies** --- Browse frontend, programming language, styling, and tool technologies.
+-   🧩 **Build My Own Stack** --- Add technologies to a personal
     stack, remove individual technologies, or remove all selected
     technologies.
 -   📱 **Responsive & Interactive UI** --- Works across desktop, tablet,
@@ -74,7 +73,7 @@ duplicated, removed, or when all technologies are removed.
 ## ▶️ Run the Project Locally
 
 ``` bash
-git clone YOUR_GITHUB_REPOSITORY_LINK
+git clone https://github.com/alifahmednowshad/dev-stack/
 cd dev-stack-builder
 npm install
 npm run dev
@@ -153,7 +152,7 @@ Each card displays:
 -   Rating
 -   Add to Stack button
 
-### Your Stack
+### My Stack
 
 The stack section displays:
 
@@ -183,12 +182,12 @@ React-Toastify is used for:
 
 ## 🌐 Live Links
 
--   **GitHub Repository Link:** https://github.com/alifahmednowshad/dev-stack
--   **Live Site Link:** [YOUR_LIVE_SITE_LINK](https://i-dev-stack.netlify.app/)
+-   **GitHub Repository Link:**  https://github.com/alifahmednowshad/dev-stack/
+-   **Live Site Link:**   https://i-dev-stack.netlify.app/
 
 ## 👨‍💻 Author
 
-**Your Name**
+**Alif Ahmed Nowshad**
 
 Built as an educational React and TypeScript project.
 
