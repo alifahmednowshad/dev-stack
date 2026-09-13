@@ -181,10 +181,10 @@ React-Toastify is used for:
 -   All technologies removed
 -   Technology loading error
 
-## 🌐 What to Submit
+## 🌐 Live Links
 
--   **GitHub Repository Link:** YOUR_GITHUB_REPOSITORY_LINK
--   **Live Site Link:** YOUR_LIVE_SITE_LINK
+-   **GitHub Repository Link:** https://github.com/alifahmednowshad/dev-stack
+-   **Live Site Link:** [YOUR_LIVE_SITE_LINK](https://i-dev-stack.netlify.app/)
 
 ## 👨‍💻 Author
 
