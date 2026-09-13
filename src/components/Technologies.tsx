@@ -1,30 +1,17 @@
-// export default function Technologies() {
-//   return (
-//     <div className="container mx-auto px-5 sm:px-6 lg:px-8">
-//       <h2>Explore the Technologies</h2>
-//       <p>Pick one technology per category to build your ideal stack.</p>
-//     </div>
-//   );
-// }
-import { useEffect, useState, type ComponentProps } from "react";
+import { useEffect, useState } from "react";
 import { toast } from "react-toastify";
 import TechnologyCard from "./TechnologyCard";
 import MyStack from "./MyStack";
-
-type Technology = ComponentProps<typeof TechnologyCard>["technology"];
-type StackTechnology = ComponentProps<typeof MyStack>["stack"][number];
-
-const getTechnologyId = (technology: Technology | StackTechnology): number =>
-  (technology as Technology & { id: number }).id;
+import type { Technology } from "../types/technology";
 
 export default function Technologies() {
   const [technologies, setTechnologies] = useState<Technology[]>([]);
-  const [stack, setStack] = useState<StackTechnology[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
+  const [stack, setStack] = useState<Technology[]>([]);
+  const [loading, setLoading] = useState(true);
 
   // Load JSON data
   useEffect(() => {
-    fetch("/data/technologies.json")
+    fetch("/data/data.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load technology data");
@@ -32,7 +19,7 @@ export default function Technologies() {
 
         return response.json();
       })
-      .then((data) => {
+      .then((data: Technology[]) => {
         setTechnologies(data);
         setLoading(false);
       })
@@ -43,45 +30,35 @@ export default function Technologies() {
       });
   }, []);
 
-  // Add technology
-  const handleAddToStack = (technology: Technology): void => {
-    const alreadyAdded = stack.some(
-      (item) => getTechnologyId(item) === getTechnologyId(technology),
-    );
+  // Add to Stack
+  const handleAddToStack = (technology: Technology) => {
+    const alreadyAdded = stack.some((item) => item.id === technology.id);
 
     if (alreadyAdded) {
       toast.warning(`${technology.name} is already in your stack.`);
       return;
     }
 
-    setStack((previousStack) => [
-      ...previousStack,
-      technology as unknown as StackTechnology,
-    ]);
+    setStack((previousStack) => [...previousStack, technology]);
 
     toast.success(`${technology.name} added to your stack.`);
   };
 
-  // Remove technology
-  const handleRemove = (id: string | number): void => {
-    const technologyId = Number(id);
-    const technology = stack.find(
-      (item) => getTechnologyId(item) === technologyId,
-    );
+  // Remove from Stack
+  const handleRemove = (id: Technology["id"]) => {
+    const technology = stack.find((item) => item.id === id);
 
     if (!technology) {
       return;
     }
 
-    setStack((previousStack) =>
-      previousStack.filter((item) => getTechnologyId(item) !== technologyId),
-    );
+    setStack((previousStack) => previousStack.filter((item) => item.id !== id));
 
-    toast.info(`${technology.name} removed from my stack.`);
+    toast.info(`${technology.name} removed from your stack.`);
   };
 
-  // Remove all
-  const handleRemoveAll = (): void => {
+  // Remove All
+  const handleRemoveAll = () => {
     if (stack.length === 0) {
       return;
     }
@@ -94,7 +71,7 @@ export default function Technologies() {
   return (
     <section id="technologies" className="bg-white py-16 sm:py-20">
       <div className="container mx-auto px-5 sm:px-6 lg:px-8">
-        {/* Section Heading */}
+        {/* Heading */}
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
             Explore the{" "}
@@ -119,21 +96,19 @@ export default function Technologies() {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
-            {/* Technology Grid */}
+            {/* Technology Cards */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
               {technologies.map((technology) => (
                 <TechnologyCard
-                  key={getTechnologyId(technology)}
+                  key={technology.id}
                   technology={technology}
-                  isAdded={stack.some(
-                    (item) => getTechnologyId(item) === getTechnologyId(technology),
-                  )}
+                  isAdded={stack.some((item) => item.id === technology.id)}
                   onAdd={handleAddToStack}
                 />
               ))}
             </div>
 
-            {/* Your Stack */}
+            {/* My Stack */}
             <div className="lg:col-span-1">
               <MyStack
                 stack={stack}

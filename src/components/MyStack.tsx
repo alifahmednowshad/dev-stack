@@ -1,9 +1,4 @@
-type Technology = {
-  id: string | number;
-  icon: string;
-  name: string;
-  category: string;
-};
+import type { Technology } from "../types/technology";
 
 type MyStackProps = {
   stack: Technology[];
@@ -65,6 +60,7 @@ export default function MyStack({
 
                 {/* Remove */}
                 <button
+                  type="button"
                   onClick={() => onRemove(technology.id)}
                   className="ml-2 text-lg text-gray-300 transition-colors duration-300 hover:text-red-500"
                   aria-label={`Remove ${technology.name}`}
@@ -77,6 +73,7 @@ export default function MyStack({
 
           {/* Remove All */}
           <button
+            type="button"
             onClick={onRemoveAll}
             className="mt-5 w-full rounded-md border border-red-200 px-4 py-2 text-xs font-medium text-red-500 transition-all duration-300 hover:bg-red-50"
           >

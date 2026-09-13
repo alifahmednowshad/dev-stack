@@ -1,12 +1,4 @@
-type Technology = {
-  icon: string;
-  name: string;
-  badge: string;
-  description: string;
-  category: string;
-  difficulty: string;
-  rating: number;
-};
+import type { Technology } from "../types/technology";
 
 type TechnologyCardProps = {
   technology: Technology;
