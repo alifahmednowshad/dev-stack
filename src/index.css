@@ -1,0 +1,139 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+* {
+  body {
+    color: #475569ff;
+    background-color: white;
+    font-family: "Inter", sans-serif;
+  }
+}
+h1,
+h2,
+h3 {
+  font-weight: 800;
+}
+h1 {
+  font-size: 3.75rem;
+}
+
+h2 {
+  font-size: 2.25rem;
+}
+
+h3 {
+  font-size: 1.125rem;
+}
+
+.my-btn {
+  padding: 12px 30px;
+  border: none;
+  border-radius: 9999px;
+  background-color: #e91e83;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.my-btn:hover {
+  background-color: #d41775;
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(233, 30, 131, 0.2);
+}
+
+.my-btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.hero-btn-primary,
+.hero-btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 11px 22px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+/* Explore Technologies */
+
+.hero-btn-primary {
+  background: linear-gradient(90deg, #ff7a18, #e91e83, #7c3aed);
+  color: white;
+}
+
+.hero-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(233, 30, 131, 0.2);
+}
+
+/* Learn More */
+
+.hero-btn-outline {
+  border: 1px solid #e5e7eb;
+  background-color: white;
+  color: #374151;
+}
+
+.hero-btn-outline:hover {
+  border-color: #e91e83;
+  color: #e91e83;
+  transform: translateY(-2px);
+}
+
+/* Responsive */
+
+@media (max-width: 640px) {
+  .my-btn {
+    padding: 9px 18px;
+    font-size: 13px;
+  }
+
+  .hero-btn-primary,
+  .hero-btn-outline {
+    padding: 9px 16px;
+    font-size: 13px;
+  }
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  h2 {
+    font-size: 1.875rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .my-btn {
+    padding: 8px 16px;
+    font-size: 12px;
+  }
+  .hero-btn-primary,
+  .hero-btn-outline {
+    padding: 8px 13px;
+    font-size: 12px;
+  }
+  h1 {
+    font-size: 2.25rem;
+  }
+
+  h2 {
+    font-size: 1.75rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+}
