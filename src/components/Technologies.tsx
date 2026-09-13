@@ -11,7 +11,7 @@ export default function Technologies() {
 
   // Load JSON data
   useEffect(() => {
-    fetch("/data/data.json")
+    fetch("/data/technologies.json")
       .then((response) => {
         if (!response.ok) {
           throw new Error("Failed to load technology data");
