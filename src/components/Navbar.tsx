@@ -3,10 +3,9 @@ import logo from "../assets/logo-text.png";
 export default function Navbar() {
   return (
     <nav className="sticky top-0 z-50 w-full border-b border-gray-100 bg-white">
-      <div className="mx-auto h-16 w-full px-3 sm:h-18 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-5 sm:px-6 lg:px-14 h-16 w-full sm:h-18  ">
         {/* ================= MOBILE NAVBAR ================= */}
         <div className="grid h-full grid-cols-[auto_1fr_auto] items-center gap-2 lg:hidden">
-          {/* Mobile Menu */}
           <div className="dropdown">
             <button
               tabIndex={0}
@@ -29,8 +28,6 @@ export default function Navbar() {
                 />
               </svg>
             </button>
-
-            {/* Mobile Navigation */}
             <ul
               tabIndex={0}
               className="menu dropdown-content z-50 mt-3 w-56 rounded-xl border border-gray-100 bg-white p-3 shadow-lg"
@@ -78,8 +75,6 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-
-          {/* Centered Logo */}
           <a
             href="/"
             className="justify-self-center transition-opacity duration-300 hover:opacity-80"
@@ -90,18 +85,16 @@ export default function Navbar() {
               className="h-8 w-auto max-w-32.5 object-contain sm:h-9 sm:max-w-38.75"
             />
           </a>
-
-          {/* Mobile Authentication */}
           <div className="flex items-center justify-end gap-1.5 sm:gap-3">
             <a
-              href="/signin"
+              href="#"
               className="whitespace-nowrap px-1 text-[11px] font-medium text-gray-700 transition-all duration-300 hover:text-[#e91e83] sm:px-0 sm:text-[14px]"
             >
               Sign In
             </a>
 
             <a
-              href="/signup"
+              href="#"
               className="whitespace-nowrap rounded-full bg-[#e91e83] px-3 py-2 text-[11px] font-semibold text-white transition-all duration-300 hover:bg-[#c9166d] sm:px-4 sm:py-2.5 sm:text-[14px]"
             >
               Sign Up
@@ -111,15 +104,12 @@ export default function Navbar() {
 
         {/* ================= DESKTOP NAVBAR ================= */}
         <div className="relative hidden h-full items-center lg:flex">
-          {/* Logo */}
           <a
             href="/"
             className="transition-opacity duration-300 hover:opacity-80"
           >
             <img src={logo} alt="DevStack" className="h-9 w-auto" />
           </a>
-
-          {/* Desktop Navigation */}
           <div className="absolute left-1/2 -translate-x-1/2">
             <ul className="flex items-center gap-8">
               <li>
@@ -130,7 +120,6 @@ export default function Navbar() {
                   Home
                 </a>
               </li>
-
               <li>
                 <a
                   href="#technologies"
@@ -139,7 +128,6 @@ export default function Navbar() {
                   Technologies
                 </a>
               </li>
-
               <li>
                 <a
                   href="#projects"
@@ -148,7 +136,6 @@ export default function Navbar() {
                   Projects
                 </a>
               </li>
-
               <li>
                 <a
                   href="#about"
@@ -157,7 +144,6 @@ export default function Navbar() {
                   About
                 </a>
               </li>
-
               <li>
                 <a
                   href="#contact"
@@ -168,17 +154,14 @@ export default function Navbar() {
               </li>
             </ul>
           </div>
-
-          {/* Desktop Authentication */}
           <div className="ml-auto flex items-center gap-4">
             <a
-              href="/signin"
+              href="#signin"
               className="text-[14px] font-medium text-gray-700 transition-all duration-300 hover:text-[#e91e83]"
             >
               Sign In
             </a>
-
-            <a href="/signup" className="my-btn">
+            <a href="#signup" className="my-btn">
               Sign Up
             </a>
           </div>

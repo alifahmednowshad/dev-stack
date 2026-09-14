@@ -70,8 +70,7 @@ export default function Technologies() {
 
   return (
     <section id="technologies" className="bg-white py-16 sm:py-20">
-      <div className="container mx-auto px-5 sm:px-6 lg:px-8">
-        {/* Heading */}
+      <div className="container mx-auto px-5 sm:px-6 lg:px-14">
         <div className="mb-8">
           <h2 className="text-3xl font-bold text-gray-900 sm:text-4xl">
             Explore the{" "}
@@ -79,13 +78,10 @@ export default function Technologies() {
               Technologies
             </span>
           </h2>
-
           <p className="mt-2 text-sm text-gray-500 sm:text-base">
             Pick one technology per category to build my ideal stack.
           </p>
         </div>
-
-        {/* Loading */}
         {loading ? (
           <div className="flex min-h-60 items-center justify-center">
             <div className="flex flex-col items-center gap-3">
@@ -96,7 +92,6 @@ export default function Technologies() {
           </div>
         ) : (
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-4">
-            {/* Technology Cards */}
             <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:col-span-3 lg:grid-cols-3">
               {technologies.map((technology) => (
                 <TechnologyCard
@@ -107,8 +102,6 @@ export default function Technologies() {
                 />
               ))}
             </div>
-
-            {/* My Stack */}
             <div className="lg:col-span-1">
               <MyStack
                 stack={stack}
